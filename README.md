@@ -4,11 +4,10 @@
 Appraisal Generator
 Copyright (c) 2023, WEI JIAN ANG.
 All rights reserved.
---------
 
 Open-source web application developed in Python3 to: 
-a) Write appraisal directly with OpenAI API key
-b) Generate prompt and pass into ChatGPT interface to write appraisal
+* a) Write appraisal directly with OpenAI API key
+* b) Generate prompt and pass into ChatGPT interface to write appraisal
 
 
 Instructions to use application for Option (a):
@@ -29,5 +28,5 @@ Instructions to use application for Option (b):
  
 --------
 
-* [GitHub](https://github.com/angwj1/st-appraisal-generator) *
-* Open source and free software: [BSD-2-Clause License](https://opensource.org/licenses/BSD-2-Clause). *
+* [GitHub](https://github.com/angwj1/st-appraisal-generator)
+* Open source and free software: [BSD-2-Clause License](https://opensource.org/licenses/BSD-2-Clause).
