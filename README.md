@@ -1,10 +1,10 @@
 # st-appraisal-generator
  
-========
+--------
 Appraisal Generator
 Copyright (c) 2023, WEI JIAN ANG.
 All rights reserved.
-========
+--------
 
 Open-source web application developed in Python3 to: 
 a) Write appraisal directly with OpenAI API key
