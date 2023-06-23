@@ -11,7 +11,8 @@ import os
 
 ss = st.session_state
 st.set_page_config(layout='wide')
-ss["disabled"]=True
+if "disabled" not in ss:
+    ss["disabled"] = True
 
 # link up streamlit and css
 folder_path = os.path.dirname(__file__)
@@ -96,7 +97,7 @@ if choose == "Generate Prompt":
           prompt = generate_chatGPT_prompt(overall_perf_score, strength, achievement, weakness)
           # prompt = ':blue[' + prompt + ']'
           st.divider()
-          st.markdown(f'<p class="output-text">{prompt}</p>', unsafe_allow_html=True)
+          st.markdown(f'''<div class="output-text">{prompt}</div>''', unsafe_allow_html=True)
 
     c2.button("Reset", on_click = clear_text)
 
@@ -151,7 +152,7 @@ elif choose == "Generate Appraisal":
           try:
             appraisal = generate_appraisal(api_key, overall_perf_score, strength, achievement, weakness)
             st.divider()
-            st.markdown(f'<p class="output-text">{appraisal}</p>', unsafe_allow_html=True)
+            st.markdown(f'''<div class="output-text">{appraisal}</div>''', unsafe_allow_html=True)
           except Exception:
             st.error('Please enter a valid OpenAI API Key!')
           
@@ -159,7 +160,6 @@ elif choose == "Generate Appraisal":
     c4.button("Reset", on_click = clear_text_openai)
 
 
-# upload on github + combine w streamlit (try using desktop git app too)
 # test out prompt with different temperature setting
 # try app with openAI API key
 

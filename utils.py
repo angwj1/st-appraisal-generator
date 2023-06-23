@@ -10,7 +10,7 @@ from langchain.llms import OpenAI
 
 def generate_appraisal(api_key, overall_perf_score, strength, achievement, weakness):
 
-	openai.api_key = api_key.strip()
+	os.environ['OPENAI_API_KEY'] = api_key.strip()
 
 	strength = strength.strip()
 	achievement = achievement.strip()
