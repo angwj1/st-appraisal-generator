@@ -1,0 +1,18 @@
+/*https://discuss.streamlit.io/t/css-hacks/14501/4*/
+/*key is to set the html style class (using f-literal string) in the main.py file, so that reference can be made in the css*/
+
+
+/*markdown main-header style*/
+.main-header-text {
+        font-size:30px; 
+        font-family: 'Cooper Black'; 
+        color: #02ab21;
+
+} 
+
+/*output font style*/
+.output-text {       
+        font-size:18px; 
+        color: #2596be;   
+}
+
