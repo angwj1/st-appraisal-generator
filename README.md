@@ -12,7 +12,7 @@ b) Generate prompt and pass into ChatGPT interface to write appraisal
 
 
 Instructions to use application for Option (a):
-1. Enter your own OpenAI API key. You can sign up for OpenAI and/or create your API key <https://platform.openai.com/account/api-keys>
+1. Enter your own OpenAI API key. You can sign up for OpenAI and/or create your API key [here](https://platform.openai.com/account/api-keys)
 2. Determine how positive the appraisal should be
 3. Enter your achievement(s)
 4. Enter your strength(s)
@@ -25,9 +25,9 @@ Instructions to use application for Option (b):
 3. Enter your strength(s)
 4. Enter your weakness(es)
 5. Generate prompt
-6. Copy and paste prompt into ChatGPT interface <https://chat.openai.com/> to write appraisal
+6. Copy and paste prompt into [ChatGPT interface](https://chat.openai.com/) to write appraisal
  
 --------
 
-* `GitHub <https://github.com/angwj1/st-appraisal-generator>`_ 
-* Open source and free software: `BSD-2-Clause License <https://opensource.org/licenses/BSD-2-Clause>`_.
+* [GitHub](https://github.com/angwj1/st-appraisal-generator) *
+* Open source and free software: [BSD-2-Clause License](https://opensource.org/licenses/BSD-2-Clause). *
