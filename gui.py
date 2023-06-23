@@ -54,7 +54,7 @@ with st.sidebar:
     st.write("""This application generates suitable prompts to 
        write appraisals with OpenAI API or ChatGPT. """)
     st.write("Made by Ang Wei Jian.") 
-    st.write("Source code can be found [here](https://github.com/).", unsafe_allow_html=True)
+    st.write("Source code can be found [here](https://github.com/angwj1/st-appraisal-generator/).", unsafe_allow_html=True)
 
 # Page on "Generate Prompt"
 if choose == "Generate Prompt":
@@ -83,7 +83,7 @@ if choose == "Generate Prompt":
        lazy, disinterested', 
        help='', label_visibility="collapsed", disabled = False)
 
-    st.write('#### Step 5. Generate Prompt and Pass into [ChatGPT interface](https://chat.openai.com/)', unsafe_allow_html=True)
+    st.write('#### Step 5. Generate Prompt then Copy & Paste Prompt into [ChatGPT interface](https://chat.openai.com/)', unsafe_allow_html=True)
 
     c1,c2= st.columns([1,4])
 
@@ -107,7 +107,7 @@ elif choose == "Generate Appraisal":
 
     st.write('#### Step 0. Enter your own OpenAI API Key')
     st.text_input('You have to enter your own OpenAI API Key before continuing. \
-      You can sign up to OpenAI and/or create your API key [here](https://platform.openai.com/account/api-keys).', key="api_key", 
+      You can sign up for OpenAI and/or create your API key [here](https://platform.openai.com/account/api-keys).', key="api_key", 
       placeholder='Enter your OpenAI API key here.', type='password')
 
     if st.button('I have entered my API Key', disabled=False):
