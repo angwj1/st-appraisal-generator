@@ -160,9 +160,6 @@ elif choose == "Generate Appraisal":
     c4.button("Reset", on_click = clear_text_openai)
 
 
-# test out prompt with different temperature setting
-# try app with openAI API key
-
 
 
 
