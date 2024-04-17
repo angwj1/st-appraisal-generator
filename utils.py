@@ -20,11 +20,14 @@ def generate_appraisal(api_key, overall_perf_score, strength, achievement, weakn
 	llm = ChatOpenAI(model='gpt-3.5-turbo', temperature=0.7)
 
 	# prompt template 1: rewrite the achievements
-	template_string_achievement = """Rewrite the achievements that is delimited by triple backticks, \
-	achievement: ```{achievement}``` \
-	Use professional tone and easy-to-understand vocabulary. \
-	Ouput an empty string i.e. ""  if there is no achievement.
-	"""
+	if achievement != "":
+	    template_string_achievement = """Rewrite the text that is delimited by triple backticks, \
+	    in impactful performance review phrases, ```{achievement}```. \
+	    Use professional tone and easy-to-understand vocabulary. Be specific.
+	    """
+	else: 
+	    template_string_strength = """Output an empty string i.e. ""
+	    """
 
 	first_prompt = ChatPromptTemplate.from_template(template_string_achievement)
 
@@ -33,15 +36,18 @@ def generate_appraisal(api_key, overall_perf_score, strength, achievement, weakn
 	                     output_key="achievement_improved"
 	                     )
 
+
 	# prompt template 2: rewrite the strengths
+
 	if strength != "":
-	    template_string_strength = """Rewrite the strengths that is delimited by triple backticks, \
-	    strength: ```{strength}``` \
-	    Use professional tone and easy-to-understand vocabulary. \
+	    template_string_strength = """Rewrite the text that is delimited by triple backticks \ 
+	    in impactful performance review phrases, ```{strength}```.\
+	    Use professional tone and easy-to-understand vocabulary. Be specific. \
 	    """
 	else: 
 	    template_string_strength = """Output an empty string i.e. ""
 	    """
+
 
 	second_prompt = ChatPromptTemplate.from_template(template_string_strength)
 
@@ -50,12 +56,12 @@ def generate_appraisal(api_key, overall_perf_score, strength, achievement, weakn
 	                     output_key="strength_improved"
 	                     )
 
+
 	# prompt template 3: rewrite the areas for improvement
 	if weakness != "":
-	    template_string_weakness = """Rewrite the areas for improvement that is delimited by triple backticks, \
-	    areas for improvement: ```{weakness}``` \
-	    Use professional tone and easy-to-understand vocabulary. \
-	    Ouput an empty string i.e. ""  if there is no areas for improvement.
+	    template_string_weakness = """Rewrite the text that is delimited by triple backticks, \
+	    in impactful performance review phrases, ```{weakness}```. \
+	    Use professional tone and easy-to-understand vocabulary. Be specific. \
 	    """
 	else: 
 	    template_string_weakness = """Output an empty string i.e. ""
@@ -68,7 +74,8 @@ def generate_appraisal(api_key, overall_perf_score, strength, achievement, weakn
 	                       output_key="weakness_improved"
 	                       )
 
-	# prompt template 4: final appraisal
+
+	# prompt template 4: appraisal
 
 	template_string = """Imagine you are a team manager. \
 	Write a {overall_perf} performance appraisal in a professional tone. \
@@ -84,7 +91,7 @@ def generate_appraisal(api_key, overall_perf_score, strength, achievement, weakn
 	 areas for improvement: %%{weakness_improved}%% \
 
 	Avoid using complex vocabulary. Avoid the use of exclamation mark. \
-	use [name], [he/she], [him/her] and [his/her] as placeholder. \
+	use [name], [he/she], [him/her] and [his/her] as placeholder. \ 
 	Use professional tone and easy-to-understand vocabulary. \
 	Suggest actionable feedback for areas for improvement.
 	"""
@@ -110,11 +117,11 @@ def generate_appraisal(api_key, overall_perf_score, strength, achievement, weakn
 	# overall_chain: input=achievement, strength, weakness
 	# and output= achievement_improved, strength_improved, weakness_improved, appraisal
 	overall_chain = SequentialChain(
-	    chains=[chain_one, chain_two, chain_three, chain_four],
+	    chains=[chain_one, chain_two, chain_three, chain_four, chain_five],
 	    input_variables=["achievement", "strength", "weakness", "overall_perf"],
 	    output_variables=["achievement_improved",
 	                      "strength_improved", "weakness_improved", "appraisal", "final_appraisal"]
-	)
+)
 
 	output = overall_chain({'achievement': achievement, 'strength': strength, 'weakness': weakness, 'overall_perf': overall_perf})
 
