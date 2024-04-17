@@ -26,7 +26,7 @@ def generate_appraisal(api_key, overall_perf_score, strength, achievement, weakn
 	    Use professional tone and easy-to-understand vocabulary. Be specific.
 	    """
 	else: 
-	    template_string_strength = """Output an empty string i.e. ""
+	    template_string_achievement = """Output an empty string i.e. ""
 	    """
 
 	first_prompt = ChatPromptTemplate.from_template(template_string_achievement)
